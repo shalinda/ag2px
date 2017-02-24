@@ -1,0 +1,27 @@
+<px-card header-text="Employee List"   chevron="true" class="body_box_wrapper" style="height:100vh" >
+
+    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+        <thead>
+            <tr>
+                <th class="mdl-data-table__cell--non-numeric">ID</th>
+                <th class="mdl-data-table__cell--non-numeric">Name</th>
+                <th class="mdl-data-table__cell--non-numeric">Address</th>
+                <th class="mdl-data-table__cell--non-numeric">Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let employee of employees" (click)="onSelect(employee)" [class.selected]="employee===selectedEmployee">
+                <td class="mdl-data-table__cell--non-numeric">{{employee.id}}</td>
+                <td class="mdl-data-table__cell--non-numeric">{{employee.name}}</td>
+                <td class="mdl-data-table__cell--non-numeric">{{employee.address}}</td>
+                <td class="mdl-data-table__cell--non-numeric">{{employee.empType}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <div>
+        <button type="button" class="btn btn-success" (click)="newRecord();">New</button>
+    </div>
+
+</px-card>
+

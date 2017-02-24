@@ -1,0 +1,57 @@
+<header >
+    <div class="viewport flex">
+
+        <div class="flex__item">
+            <div class="flex" style="text-align:left;">
+                <h4 style="color:white" class="flex__item weight--normal">ContPXAg2</h4>
+            </div>
+
+        </div>
+        <div class="flex__item">
+            <div class="flex" style="text-align:right;">
+                <h6 style="color:white" class="flex__item weight--normal">SignOut</h6>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+<div style=" height: 100%">
+    <div class="content-wrapper"  style=" height: 100%" >
+        <px-app-nav   nav-items='[
+                      {
+                      "label": "Control",
+                      "path": null,
+                      "icon": "fa-tachometer",
+                      "subitems":[
+                      {
+                      "label":"Car Hire Event ",
+                      "path":"/carHireEvent",
+                      "selected":false,
+                      "icon": "fa-train"
+                      }
+                      ]},
+                      {
+                      "label": "Students",
+                      "path": "students",
+                      "icon": "fa-tachometer" },
+                      {
+                      "label": "Heroes",
+                      "path": "/heroes",
+                      "icon": "fa-tachometer" },
+                      {
+                      "label": "Employees",
+                      "path": "/employees",
+                      "icon": "fa-tachometer" }
+                      ]'>
+        </px-app-nav >
+        <div class="body_box_wrapper" style=" height: 100%">
+            <router-outlet></router-outlet>
+        </div>
+
+    </div>
+</div>
+
+
+
+

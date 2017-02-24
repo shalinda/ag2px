@@ -1,0 +1,21 @@
+<px-card header-text="Search Form"   chevron="true" class="body_box_wrapper" style="height:100vh" >
+
+    <div>
+
+        <label for="name">Equip Initial</label>
+        <input id="name" [(ngModel)]="name"   placeholder="Initial" class="text-input" type="text">
+        <label for="equipNum">Equip Number</label>
+        <input id="equipNum"  value="{{name}}"   placeholder="Number" class="text-input" type="text">
+        <button class="btn" (click)="fecthData()"  type='button'>Search </button>
+    </div>
+
+
+    <div>
+        <sx-px-data-table   [tabledata]="tabledata" ></sx-px-data-table>
+    </div>
+</px-card>
+
+
+
+
+

@@ -7,4 +7,4 @@ How to build the application :
 3. Run 'npm start'
 4. Point the browser URL to http://localhost:3000
 
-   
+** When promt for bower optinos get latest options

@@ -27,6 +27,9 @@ import {EmployeeService} from "../modules/employees/service/employee.service";
 const powerList = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
 const genderList = [{'key': 'M', 'value': 'Male'}, {'key': 'F', 'value': 'Female'}];
 const empTypeList = [{'key': '1', 'value': 'HR'}, {'key': '2', 'value': 'IT'}, {'key': '3', 'value': 'Admin'}];
+import {requestOptionsProvider} from './default-request-options.service';
+import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
+import {DataModell} from './hero-data';
 
 @NgModule({
     imports: [
@@ -37,7 +40,7 @@ const empTypeList = [{'key': '1', 'value': 'HR'}, {'key': '2', 'value': 'IT'}, {
         JsonpModule,
         CarHireEventModule,
         //AppModule2,
-
+        //        InMemoryWebApiModule.forRoot(DataModell)
     ],
     declarations: [
         AppComponent,
@@ -56,6 +59,7 @@ const empTypeList = [{'key': '1', 'value': 'HR'}, {'key': '2', 'value': 'IT'}, {
 
     ],
     providers: [
+        requestOptionsProvider,
         appRoutingProviders,
         {provide: LocationStrategy, useClass: HashLocationStrategy},
         AppNavigatorDataService,

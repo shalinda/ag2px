@@ -1,17 +1,30 @@
-<px-card header-text="Search Form"   chevron="true" class="body_box_wrapper" style="height:100vh" >
+
+
+<px-card header-text="Search Form"    class="body_box_wrapper" style="height:150px" >
+
+
+
+    <label for="name">Equip Initial</label>
+    <input id="equipInitial"   #equipInitial   placeholder="Initial" class="text-input" type="text">
+
+
+    <label for="equipNum">Equip Number</label>
+    <input id="equipNum"   #equipNum     placeholder="Number" class="text-input" type="text">
+
+    <button  (click)="fecthData(equipInitial.value,equipNum.value)"  type='button'>Search </button>
+    <button   (click)="addEuip(equipInitial.value,equipNum.value); newHeroName.value=''"  type='button'>Add Equip</button>
+    <p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
+
+</px-card>
+<px-card header-text="Events Screen "   class="body_box_wrapper" style="height:100vh" >
 
     <div>
+        <px-data-table   [tableData]="tabledata" striped="true" filterable >
+            <px-data-table-column  name="id" label='ID' filterable  sortable editable  >  </px-data-table-column>
+            <px-data-table-column  name="equipInitial"  label='Equip Initial' filterable  sortable editable  >  </px-data-table-column>
+            <px-data-table-column  name="equipNum"  label='Equip Number' filterable  sortable editable  >  </px-data-table-column>
 
-        <label for="name">Equip Initial</label>
-        <input id="name" [(ngModel)]="name"   placeholder="Initial" class="text-input" type="text">
-        <label for="equipNum">Equip Number</label>
-        <input id="equipNum"  value="{{name}}"   placeholder="Number" class="text-input" type="text">
-        <button class="btn" (click)="fecthData()"  type='button'>Search </button>
-    </div>
-
-
-    <div>
-        <sx-px-data-table   [tabledata]="tabledata" ></sx-px-data-table>
+        </px-data-table>
     </div>
 </px-card>
 

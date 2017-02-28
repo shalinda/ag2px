@@ -1,4 +1,4 @@
-System.register(["@angular/core", "./service/row_DataService"], function (exports_1, context_1) {
+System.register(["@angular/core", "./service"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -10,67 +10,69 @@ System.register(["@angular/core", "./service/row_DataService"], function (export
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var __moduleName = context_1 && context_1.id;
-    var core_1, row_DataService_1, CarHireEvent;
+    var core_1, service_1, CarHireEvent;
     return {
         setters: [
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (row_DataService_1_1) {
-                row_DataService_1 = row_DataService_1_1;
+            function (service_1_1) {
+                service_1 = service_1_1;
             }
         ],
         execute: function () {
             CarHireEvent = (function () {
-                function CarHireEvent(dataService) {
-                    this.dataService = dataService;
+                function CarHireEvent(service) {
+                    this.service = service;
                     this.tabledata = [];
+                    this.mode = 'Observable';
                 }
-                CarHireEvent.prototype.ngAfterViewInit = function () {
+                CarHireEvent.prototype.fecthData = function (equiInit, equipNum) {
+                    var _this = this;
+                    var model;
+                    model = {
+                        id: 1,
+                        equipInitial: equiInit,
+                        equipNum: equipNum,
+                    };
+                    this.service.fecthData(model)
+                        .subscribe(function (list) { return _this.tabledata = list; }, function (error) { return _this.errorMessage = error; });
+                    //        this.service.fecthData(model)
+                    //            .subscribe(
+                    //            heroes => (console.log("iniddddddt>>" + heroes.length)),
+                    //            error => this.errorMessage = <any> error);
                 };
-                CarHireEvent.prototype.fecthData = function () {
-                    this.tabledata = [
-                        {
-                            id: 1,
-                            equiInit: 'AM',
-                            equipNum: '000500',
-                        },
-                        {
-                            id: 2,
-                            equiInit: 'ACJR',
-                            equipNum: '000501',
-                        },
-                        {
-                            id: 3,
-                            equiInit: 'ACWR',
-                            equipNum: '000502',
-                        },
-                        {
-                            id: 3,
-                            equiInit: 'ACWR',
-                            equipNum: '000502',
-                        },
-                        {
-                            id: 3,
-                            equiInit: 'ACWR',
-                            equipNum: '000502',
-                        },
-                        {
-                            id: 3,
-                            equiInit: 'ACWR',
-                            equipNum: '000502',
-                        },
-                    ];
-                    return this.tabledata;
+                CarHireEvent.prototype.addEuip = function (equiInit, equipNum) {
+                    var _this = this;
+                    var model = {
+                        id: 1,
+                        equipInitial: equiInit,
+                        equipNum: equipNum,
+                    };
+                    console.log("init>>" + model.equipInitial + " num >>" + model.equipNum);
+                    if (!equiInit) {
+                        return;
+                    }
+                    if (!equipNum) {
+                        return;
+                    }
+                    this.service.addEquip(model)
+                        .subscribe(function (modelIncoming) { return _this.tabledata.push(modelIncoming); }, function (error) { return _this.errorMessage = error; });
+                    //        this.service.addEuip(model)
+                    //            .subscribe(
+                    //            model => this.tabledata.push(model),
+                    //            error => this.errorMessage = <any> error);
                 };
                 return CarHireEvent;
             }());
             CarHireEvent = __decorate([
                 core_1.Component({
                     templateUrl: './app/modules/carHireEvent/CarHireEvent.html',
-                    styleUrls: ['./app/shared/sass/px-app-test.scss']
+                    styleUrls: ['./app/shared/sass/px-app-test.scss'],
+                    styles: ['.error {color:red;}'],
+                    providers: [service_1.Service],
                 }),
-                __metadata("design:paramtypes", [row_DataService_1.row_DataService])
+                __metadata("design:paramtypes", [service_1.Service])
             ], CarHireEvent);
             exports_1("CarHireEvent", CarHireEvent);
         }

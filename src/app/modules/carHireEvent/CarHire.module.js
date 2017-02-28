@@ -1,4 +1,4 @@
-System.register(["@angular/core", "@angular/http", "@angular/forms", "./service/row_DataService", "./CarHireEvent", "@angular/common"], function (exports_1, context_1) {
+System.register(["@angular/core", "@angular/http", "@angular/forms", "./CarHireEvent", "@angular/common"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -7,7 +7,7 @@ System.register(["@angular/core", "@angular/http", "@angular/forms", "./service/
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
     var __moduleName = context_1 && context_1.id;
-    var core_1, http_1, forms_1, row_DataService_1, CarHireEvent_1, common_1, CarHireEventModule;
+    var core_1, http_1, forms_1, CarHireEvent_1, common_1, CarHireEventModule;
     return {
         setters: [
             function (core_1_1) {
@@ -18,9 +18,6 @@ System.register(["@angular/core", "@angular/http", "@angular/forms", "./service/
             },
             function (forms_1_1) {
                 forms_1 = forms_1_1;
-            },
-            function (row_DataService_1_1) {
-                row_DataService_1 = row_DataService_1_1;
             },
             function (CarHireEvent_1_1) {
                 CarHireEvent_1 = CarHireEvent_1_1;
@@ -44,11 +41,9 @@ System.register(["@angular/core", "@angular/http", "@angular/forms", "./service/
                         common_1.CommonModule,
                     ],
                     declarations: [
-                        CarHireEvent_1.CarHireEvent,
+                        CarHireEvent_1.CarHireEvent
                     ],
-                    providers: [
-                        row_DataService_1.row_DataService,
-                    ],
+                    providers: [],
                     schemas: [core_1.CUSTOM_ELEMENTS_SCHEMA]
                 })
             ], CarHireEventModule);

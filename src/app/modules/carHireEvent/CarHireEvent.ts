@@ -1,58 +1,68 @@
 import {Component, OnInit} from "@angular/core";
 
-import {row_DataService} from './service/row_DataService'
-import {row_Data} from './service/row_Data';
-import {AfterViewInit, ViewChild} from '@angular/core';
 
+import {DataModel} from './data-model';
+
+
+import {Service} from './service';
 
 @Component({
     templateUrl: './app/modules/carHireEvent/CarHireEvent.html',
-    styleUrls: ['./app/shared/sass/px-app-test.scss']
+    styleUrls: ['./app/shared/sass/px-app-test.scss'],
+    styles: ['.error {color:red;}'],
+    providers: [Service],
 })
-export class CarHireEvent implements AfterViewInit {
-    tabledata: row_Data[] = [];
-    constructor(private dataService: row_DataService) {}
-    ngAfterViewInit() {
+export class CarHireEvent {
+    tabledata: DataModel[] = [];
+    errorMessage: string;
+
+
+    mode = 'Observable';
+
+    constructor(private service: Service) {}
+
+
+
+    fecthData(equiInit: string, equipNum: string) {
+        let model: DataModel;
+        model = {
+            id: 1,
+            equipInitial: equiInit,
+            equipNum: equipNum,
+        }
+        this.service.fecthData(model)
+            .subscribe(
+            list => this.tabledata = list,
+            error => this.errorMessage = <any> error);
+
+        //        this.service.fecthData(model)
+        //            .subscribe(
+        //            heroes => (console.log("iniddddddt>>" + heroes.length)),
+        //            error => this.errorMessage = <any> error);
     }
 
-    fecthData() {
-        this.tabledata = [
-            {
-                id: 1,
-                equiInit: 'AM',
-                equipNum: '000500',
+    addEuip(equiInit: string, equipNum: string) {
+        let model = {
+            id: 1,
+            equipInitial: equiInit,
+            equipNum: equipNum,
+        };
+        console.log("init>>" + model.equipInitial + " num >>" + model.equipNum);
+        if (!equiInit) {return;}
+        if (!equipNum) {return;}
 
-            },
-            {
-                id: 2,
-                equiInit: 'ACJR',
-                equipNum: '000501',
-
-            },
-            {
-                id: 3,
-                equiInit: 'ACWR',
-                equipNum: '000502',
-            },
-            {
-                id: 3,
-                equiInit: 'ACWR',
-                equipNum: '000502',
-            },
-            {
-                id: 3,
-                equiInit: 'ACWR',
-                equipNum: '000502',
-            },
-            {
-                id: 3,
-                equiInit: 'ACWR',
-                equipNum: '000502',
-            },
-        ];
-
-        return this.tabledata;
-
+        this.service.addEquip(model)
+            .subscribe(
+            modelIncoming => this.tabledata.push(modelIncoming),
+            error => this.errorMessage = <any> error);
+        //        this.service.addEuip(model)
+        //            .subscribe(
+        //            model => this.tabledata.push(model),
+        //            error => this.errorMessage = <any> error);
     }
 
 }
+
+
+
+

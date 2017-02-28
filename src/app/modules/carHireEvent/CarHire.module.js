@@ -44,7 +44,7 @@ System.register(["@angular/core", "@angular/http", "@angular/forms", "./CarHireE
                         CarHireEvent_1.CarHireEvent
                     ],
                     providers: [],
-                    schemas: [core_1.CUSTOM_ELEMENTS_SCHEMA]
+                    schemas: [core_1.CUSTOM_ELEMENTS_SCHEMA],
                 })
             ], CarHireEventModule);
             exports_1("CarHireEventModule", CarHireEventModule);

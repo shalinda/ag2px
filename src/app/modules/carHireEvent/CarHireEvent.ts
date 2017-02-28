@@ -11,6 +11,7 @@ import {Service} from './service';
     styleUrls: ['./app/shared/sass/px-app-test.scss'],
     styles: ['.error {color:red;}'],
     providers: [Service],
+//      styleUrls: ['./app/modules/carHireEvent/app.component.scss']
 })
 export class CarHireEvent {
     tabledata: DataModel[] = [];

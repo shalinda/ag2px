@@ -17,15 +17,15 @@ import {CommonModule} from '@angular/common';
 
     ],
     declarations: [
-        CarHireEvent 
+        CarHireEvent
 
     ],
     providers: [
         //   DataService,
 
     ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  
 
 })
 export class CarHireEventModule {}

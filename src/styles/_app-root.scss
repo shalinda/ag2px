@@ -1,0 +1,51 @@
+body {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: $gray9;
+  position: absolute;
+  padding-left: 40px;
+  padding-right: 40px;
+  // Added min width and height as per discussion with UX.
+  min-width: 768px;
+  min-height: 620px;
+  overflow: scroll;
+  line-height: 1 !important;
+}
+
+px-dropdown {
+  px-dropdown-text {
+    height: 28px;
+    padding-left: 7px;
+    padding-top: 7px;
+  }
+  px-dropdown-chevron {
+    padding-right: 7px;
+  }
+  px-dropdown-content .px-dropdown--content {
+    box-shadow: 0 4px 6px -6px #222;
+    .px-dropdown--listitem {
+      height: 30px;
+    }
+  }
+}
+
+list-infinite {
+  ul.list-header.list-ui.list-ui--tiny {
+    border-top: none;
+
+    > li {
+      padding-left: 10px;
+      padding-right: 10px;
+      height: 30px;
+
+      span, strong {
+        vertical-align: middle;
+      }
+
+      i {
+        margin-left: 6px;
+      }
+    }
+  }
+}

@@ -4,7 +4,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {HttpModule, JsonpModule} from '@angular/http';
 import {AppComponent} from './app.component';
-import {CarHireEventModule} from '../modules/carHireEvent/CarHire.module';
 //import {CarHireCycleModule} from '../modules/carHireCycle/CarHireCycle.module';
 import {routing, appRoutingProviders} from './routing/app.routing';
 
@@ -27,9 +26,10 @@ import {EmployeeService} from "../modules/employees/service/employee.service";
 const powerList = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
 const genderList = [{'key': 'M', 'value': 'Male'}, {'key': 'F', 'value': 'Female'}];
 const empTypeList = [{'key': '1', 'value': 'HR'}, {'key': '2', 'value': 'IT'}, {'key': '3', 'value': 'Admin'}];
-import {requestOptionsProvider} from './default-request-options.service';
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {DataModell} from './hero-data';
+import {CommonModule} from '@angular/common';
+import {CarHireEvent} from '../modules/carHireEvent/view/CarHireEvent';
 
 @NgModule({
     imports: [
@@ -38,7 +38,7 @@ import {DataModell} from './hero-data';
         routing,
         HttpModule,
         JsonpModule,
-        CarHireEventModule,
+        CommonModule,
         //AppModule2,
         //        InMemoryWebApiModule.forRoot(DataModell)
     ],
@@ -55,11 +55,11 @@ import {DataModell} from './hero-data';
         MenuComponent,
         SidebarComponent,
         UserProfileComponent,
+        CarHireEvent,
 
 
     ],
     providers: [
-        requestOptionsProvider,
         appRoutingProviders,
         {provide: LocationStrategy, useClass: HashLocationStrategy},
         AppNavigatorDataService,

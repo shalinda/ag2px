@@ -1,7 +1,7 @@
 import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
-import {CarHireEvent} from "../../modules/carHireEvent/CarHireEvent";
+import {CarHireEvent} from "../../modules/carHireEvent/view/CarHireEvent";
 //import {CarHireCycle} from "../../modules/carHireCycle/CarHireCycle";
 import {StudentListCoponent} from "../../modules/students/list/student-list.component";
 import {HeroListComponent} from "../../modules/heroes/list/hero-list.component";

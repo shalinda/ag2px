@@ -1,4 +1,4 @@
-System.register(["@angular/core", "./service"], function (exports_1, context_1) {
+System.register(["@angular/core", "../service/service"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -37,10 +37,6 @@ System.register(["@angular/core", "./service"], function (exports_1, context_1) 
                     };
                     this.service.fecthData(model)
                         .subscribe(function (list) { return _this.tabledata = list; }, function (error) { return _this.errorMessage = error; });
-                    //        this.service.fecthData(model)
-                    //            .subscribe(
-                    //            heroes => (console.log("iniddddddt>>" + heroes.length)),
-                    //            error => this.errorMessage = <any> error);
                 };
                 CarHireEvent.prototype.addEuip = function (equiInit, equipNum) {
                     var _this = this;
@@ -58,17 +54,14 @@ System.register(["@angular/core", "./service"], function (exports_1, context_1) 
                     }
                     this.service.addEquip(model)
                         .subscribe(function (modelIncoming) { return _this.tabledata.push(modelIncoming); }, function (error) { return _this.errorMessage = error; });
-                    //        this.service.addEuip(model)
-                    //            .subscribe(
-                    //            model => this.tabledata.push(model),
-                    //            error => this.errorMessage = <any> error);
                 };
                 return CarHireEvent;
             }());
             CarHireEvent = __decorate([
                 core_1.Component({
-                    templateUrl: './app/modules/carHireEvent/CarHireEvent.html',
-                    styleUrls: ['./app/shared/sass/px-app-test.scss'],
+                    moduleId: __moduleName,
+                    templateUrl: './CarHireEvent.html',
+                    styleUrls: ['../css/app.component.scss'],
                     styles: ['.error {color:red;}'],
                     providers: [service_1.Service],
                 }),

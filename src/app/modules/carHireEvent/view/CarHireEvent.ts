@@ -1,28 +1,26 @@
 import {Component, OnInit} from "@angular/core";
 
 
-import {DataModel} from './data-model';
+import {DataModel} from '../model/data-model';
 
 
-import {Service} from './service';
+import {Service} from '../service/service';
+declare var __moduleName: string;
 
 @Component({
-    templateUrl: './app/modules/carHireEvent/CarHireEvent.html',
-    styleUrls: ['./app/shared/sass/px-app-test.scss'],
+    moduleId: __moduleName,
+    templateUrl: './CarHireEvent.html',
+    styleUrls: ['../css/app.component.scss'],
     styles: ['.error {color:red;}'],
     providers: [Service],
-//      styleUrls: ['./app/modules/carHireEvent/app.component.scss']
+    //      styleUrls: ['./app/modules/carHireEvent/app.component.scss']
 })
 export class CarHireEvent {
     tabledata: DataModel[] = [];
     errorMessage: string;
-
-
     mode = 'Observable';
 
     constructor(private service: Service) {}
-
-
 
     fecthData(equiInit: string, equipNum: string) {
         let model: DataModel;
@@ -35,11 +33,6 @@ export class CarHireEvent {
             .subscribe(
             list => this.tabledata = list,
             error => this.errorMessage = <any> error);
-
-        //        this.service.fecthData(model)
-        //            .subscribe(
-        //            heroes => (console.log("iniddddddt>>" + heroes.length)),
-        //            error => this.errorMessage = <any> error);
     }
 
     addEuip(equiInit: string, equipNum: string) {
@@ -56,10 +49,6 @@ export class CarHireEvent {
             .subscribe(
             modelIncoming => this.tabledata.push(modelIncoming),
             error => this.errorMessage = <any> error);
-        //        this.service.addEuip(model)
-        //            .subscribe(
-        //            model => this.tabledata.push(model),
-        //            error => this.errorMessage = <any> error);
     }
 
 }

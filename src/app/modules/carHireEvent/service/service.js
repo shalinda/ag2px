@@ -37,14 +37,9 @@ System.register(["@angular/core", "@angular/http", "rxjs/Observable", "rxjs/add/
                 }
                 Service.prototype.fecthData = function (model) {
                     console.info("hero>>" + model.equipInitial);
-                    var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
-                    var options = new http_2.RequestOptions({ headers: headers });
                     return this.http.get(this.url)
                         .map(this.extractData)
                         .catch(this.handleError);
-                    //        return this.http.post(this.url, {model}, options)
-                    //            .map(this.extractData)
-                    //            .catch(this.handleError);
                 };
                 Service.prototype.addEquip = function (model) {
                     console.info("model >>" + model.equipInitial);
@@ -56,12 +51,13 @@ System.register(["@angular/core", "@angular/http", "rxjs/Observable", "rxjs/add/
                 };
                 Service.prototype.extractData = function (res) {
                     var body = res.json();
-                    return body._embedded.carhireEvents || {};
+                    return body.data || {};
                 };
                 Service.prototype.handleError = function (error) {
                     // In a real world app, we might use a remote logging infrastructure
                     var errMsg;
                     if (error instanceof http_1.Response) {
+                        console.error("Error in response");
                         var body = error.json() || '';
                         var err = body.error || JSON.stringify(body);
                         errMsg = error.status + " - " + (error.statusText || '') + " " + err;
@@ -69,7 +65,7 @@ System.register(["@angular/core", "@angular/http", "rxjs/Observable", "rxjs/add/
                     else {
                         errMsg = error.message ? error.message : error.toString();
                     }
-                    console.error(errMsg + "dd");
+                    console.error(errMsg);
                     return Observable_1.Observable.throw(errMsg);
                 };
                 return Service;

@@ -1,4 +1,4 @@
-System.register(["@angular/core", "@angular/common", "@angular/platform-browser", "@angular/forms", "@angular/http", "./app.component", "../modules/carHireEvent/CarHire.module", "./routing/app.routing", "../app_navigator/app-nativator.component", "../modules/students/list/student-list.component", "../modules/students/detail/student-detail.component", "../modules/heroes/list/hero-list.component", "../modules/heroes/detail/hero-detail.component", "../modules/employees/list/employee-list.component", "../modules/employees/detail/employee-detail.component", "../layout/header.component", "../layout/menu.component", "../layout/sidebar.component", "../layout/profile.component", "../app_navigator/app-navigator-data.service", "../modules/students/service/student.service", "../modules/heroes/service/hero.service", "../modules/employees/service/employee.service", "./default-request-options.service"], function (exports_1, context_1) {
+System.register(["@angular/core", "@angular/common", "@angular/platform-browser", "@angular/forms", "@angular/http", "./app.component", "./routing/app.routing", "../app_navigator/app-nativator.component", "../modules/students/list/student-list.component", "../modules/students/detail/student-detail.component", "../modules/heroes/list/hero-list.component", "../modules/heroes/detail/hero-detail.component", "../modules/employees/list/employee-list.component", "../modules/employees/detail/employee-detail.component", "../layout/header.component", "../layout/menu.component", "../layout/sidebar.component", "../layout/profile.component", "../app_navigator/app-navigator-data.service", "../modules/students/service/student.service", "../modules/heroes/service/hero.service", "../modules/employees/service/employee.service", "../modules/carHireEvent/view/CarHireEvent"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -7,7 +7,7 @@ System.register(["@angular/core", "@angular/common", "@angular/platform-browser"
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
     var __moduleName = context_1 && context_1.id;
-    var core_1, common_1, platform_browser_1, forms_1, http_1, app_component_1, CarHire_module_1, app_routing_1, app_nativator_component_1, student_list_component_1, student_detail_component_1, hero_list_component_1, hero_detail_component_1, employee_list_component_1, employee_detail_component_1, header_component_1, menu_component_1, sidebar_component_1, profile_component_1, app_navigator_data_service_1, student_service_1, hero_service_1, employee_service_1, powerList, genderList, empTypeList, default_request_options_service_1, AppModule;
+    var core_1, common_1, platform_browser_1, forms_1, http_1, app_component_1, app_routing_1, app_nativator_component_1, student_list_component_1, student_detail_component_1, hero_list_component_1, hero_detail_component_1, employee_list_component_1, employee_detail_component_1, header_component_1, menu_component_1, sidebar_component_1, profile_component_1, app_navigator_data_service_1, student_service_1, hero_service_1, employee_service_1, powerList, genderList, empTypeList, common_2, CarHireEvent_1, AppModule;
     return {
         setters: [
             function (core_1_1) {
@@ -15,6 +15,7 @@ System.register(["@angular/core", "@angular/common", "@angular/platform-browser"
             },
             function (common_1_1) {
                 common_1 = common_1_1;
+                common_2 = common_1_1;
             },
             function (platform_browser_1_1) {
                 platform_browser_1 = platform_browser_1_1;
@@ -27,9 +28,6 @@ System.register(["@angular/core", "@angular/common", "@angular/platform-browser"
             },
             function (app_component_1_1) {
                 app_component_1 = app_component_1_1;
-            },
-            function (CarHire_module_1_1) {
-                CarHire_module_1 = CarHire_module_1_1;
             },
             function (app_routing_1_1) {
                 app_routing_1 = app_routing_1_1;
@@ -79,8 +77,8 @@ System.register(["@angular/core", "@angular/common", "@angular/platform-browser"
             function (employee_service_1_1) {
                 employee_service_1 = employee_service_1_1;
             },
-            function (default_request_options_service_1_1) {
-                default_request_options_service_1 = default_request_options_service_1_1;
+            function (CarHireEvent_1_1) {
+                CarHireEvent_1 = CarHireEvent_1_1;
             }
         ],
         execute: function () {
@@ -100,7 +98,7 @@ System.register(["@angular/core", "@angular/common", "@angular/platform-browser"
                         app_routing_1.routing,
                         http_1.HttpModule,
                         http_1.JsonpModule,
-                        CarHire_module_1.CarHireEventModule,
+                        common_2.CommonModule,
                     ],
                     declarations: [
                         app_component_1.AppComponent,
@@ -115,9 +113,9 @@ System.register(["@angular/core", "@angular/common", "@angular/platform-browser"
                         menu_component_1.MenuComponent,
                         sidebar_component_1.SidebarComponent,
                         profile_component_1.UserProfileComponent,
+                        CarHireEvent_1.CarHireEvent,
                     ],
                     providers: [
-                        default_request_options_service_1.requestOptionsProvider,
                         app_routing_1.appRoutingProviders,
                         { provide: common_1.LocationStrategy, useClass: common_1.HashLocationStrategy },
                         app_navigator_data_service_1.AppNavigatorDataService,

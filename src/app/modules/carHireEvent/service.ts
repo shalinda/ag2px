@@ -11,8 +11,8 @@ import {DataModel} from './data-model';
 
 @Injectable()
 export class Service {
-    private url = 'equipments.json';  // URL to web API
-    //    private url = '/CarHireEvent!fetchCarHireEventsListTemp.action';  // URL to web API
+    //private url = 'equipments.json';  // URL to web API
+    private url = '/api/carhireEvents';  // URL to web API
 
     constructor(private http: Http) {}
 
@@ -41,7 +41,7 @@ export class Service {
 
     private extractData(res: Response) {
         let body = res.json();
-        return body.data || {};
+        return body._embedded.carhireEvents || {};
     }
 
     private handleError(error: Response | any) {

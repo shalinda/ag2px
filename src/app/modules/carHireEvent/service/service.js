@@ -33,11 +33,11 @@ System.register(["@angular/core", "@angular/http", "rxjs/Observable", "rxjs/add/
                 function Service(http) {
                     this.http = http;
                     //private url = 'equipments.json';  // URL to web API
-                    this.url = '/api/carhireEvents'; // URL to web API
+                    this.url = 'http://localhost:7000/cars'; // URL to web API
                 }
                 Service.prototype.fecthData = function (model) {
                     console.info("hero>>" + model.equipInitial);
-                    return this.http.get(this.url)
+                    return this.http.get(this.url + "/list")
                         .map(this.extractData)
                         .catch(this.handleError);
                 };
@@ -45,13 +45,13 @@ System.register(["@angular/core", "@angular/http", "rxjs/Observable", "rxjs/add/
                     console.info("model >>" + model.equipInitial);
                     var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
                     var options = new http_2.RequestOptions({ headers: headers });
-                    return this.http.post(this.url, { model: model }, options)
+                    return this.http.post(this.url, model, options)
                         .map(this.extractData)
                         .catch(this.handleError);
                 };
                 Service.prototype.extractData = function (res) {
                     var body = res.json();
-                    return body.data || {};
+                    return body || {};
                 };
                 Service.prototype.handleError = function (error) {
                     // In a real world app, we might use a remote logging infrastructure
@@ -75,14 +75,6 @@ System.register(["@angular/core", "@angular/http", "rxjs/Observable", "rxjs/add/
                 __metadata("design:paramtypes", [http_1.Http])
             ], Service);
             exports_1("Service", Service);
-            /*
-              private heroesUrl = 'app/heroes.json'; // URL to JSON file
-            */
-            /*
-            Copyright 2017 Google Inc. All Rights Reserved.
-            Use of this source code is governed by an MIT-style license that
-            can be found in the LICENSE file at http://angular.io/license
-            */ 
         }
     };
 });

@@ -10,7 +10,7 @@ declare var __moduleName: string;
 @Component({
     moduleId: __moduleName,
     templateUrl: './CarHireEvent.html',
-    styleUrls: ['../css/app.component.scss'],
+    //styleUrls: ['../css/app.component.scss'],
     styles: ['.error {color:red;}'],
     providers: [Service],
     //      styleUrls: ['./app/modules/carHireEvent/app.component.scss']
@@ -36,18 +36,14 @@ export class CarHireEvent {
     }
 
     addEuip(equiInit: string, equipNum: string) {
-        let model = {
-            id: 1,
-            equipInitial: equiInit,
-            equipNum: equipNum,
-        };
+        let model = new DataModel(null, equiInit, equipNum);
         console.log("init>>" + model.equipInitial + " num >>" + model.equipNum);
         if (!equiInit) {return;}
         if (!equipNum) {return;}
 
         this.service.addEquip(model)
             .subscribe(
-            modelIncoming => this.tabledata.push(modelIncoming),
+            modelIncoming => {this.fecthData(model.equiInit,model.equipNum)},
             error => this.errorMessage = <any> error);
     }
 

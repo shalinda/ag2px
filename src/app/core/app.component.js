@@ -22,9 +22,10 @@ System.register(["@angular/core"], function (exports_1, context_1) {
             }());
             AppComponent = __decorate([
                 core_1.Component({
+                    moduleId: __moduleName,
                     selector: 'my-app',
-                    templateUrl: './app/core/app.component.html',
-                    styleUrls: ['./app/shared/sass/px-app-test.scss']
+                    templateUrl: './app.component.html',
+                    styleUrls: ['../../styles.scss']
                 })
             ], AppComponent);
             exports_1("AppComponent", AppComponent);

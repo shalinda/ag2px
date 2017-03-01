@@ -1,0 +1,8 @@
+{
+  "/cars/list": "/cars",
+  "/cars/get/:id": "/cars/:id",
+  "/cars/create": "/cars",
+  "/cars/update/:id": "/cars/:id",
+  "/cars/delete/:id": "/cars/:id"
+}
+

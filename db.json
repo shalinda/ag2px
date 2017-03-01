@@ -1,0 +1,44 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "equipInitial": "AM",
+      "equipNum": "123456"
+    },
+    {
+      "id": 2,
+      "equipInitial": "CN",
+      "equipNum": "12334"
+    },
+    {
+      "id": 3,
+      "equipInitial": "dqwed",
+      "equipNum": "222"
+    },
+    {
+      "id": 4,
+      "equipInitial": "1223",
+      "equipNum": "1233"
+    },
+    {
+      "id": 5,
+      "equipInitial": "1223",
+      "equipNum": "1233ss"
+    },
+    {
+      "id": 6,
+      "equipInitial": "dfd",
+      "equipNum": "rrr"
+    },
+    {
+      "id": 7,
+      "equipInitial": "dfd",
+      "equipNum": "rrr"
+    },
+    {
+      "id": 8,
+      "equipInitial": "dfd",
+      "equipNum": "rrr"
+    }
+  ]
+}

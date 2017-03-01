@@ -12,8 +12,7 @@
         <!--<link rel="stylesheet" href="node_modules/material-design-lite/material.min.css">-->
         <!--<link rel="stylesheet" href="node_modules/material-design-icons/iconfont/material-icons.css">-->
         <!--<script src="node_modules/material-design-lite/material.min.js"></script>-->
-        <link rel="stylesheet" href="styles.css">
-
+        <style include="px-theme-styles" is="custom-style"></style>
         <!-- Polyfills -->
 
         <!-- 1. Load libraries -->
@@ -32,7 +31,6 @@
         </script>
 
         <!-- Polymer Elements -->
-        <style include="px-theme-styles" is="custom-style"></style>
         <link rel="import" href="bower_components/px-theme/px-theme-styles.html">
         <link rel="import" href="bower_components/px-app-nav/px-app-nav.html">
         <link rel="import" href="bower_components/px-view-header/px-view-header.html">
@@ -65,8 +63,8 @@
         </script>
     </head>
 
-    <body bgcolor="light-blue">
-    <my-app><px-spinner></px-spinner></my-app>
+    <body class="app" >
+    <my-app class="flex flex--row"><px-spinner></px-spinner></my-app>
 </body>
 </html>
 

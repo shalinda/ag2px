@@ -1,4 +1,4 @@
-System.register(["@angular/core", "../service/service"], function (exports_1, context_1) {
+System.register(["@angular/core", "../model/data-model", "../service/service"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -10,11 +10,14 @@ System.register(["@angular/core", "../service/service"], function (exports_1, co
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var __moduleName = context_1 && context_1.id;
-    var core_1, service_1, CarHireEvent;
+    var core_1, data_model_1, service_1, CarHireEvent;
     return {
         setters: [
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (data_model_1_1) {
+                data_model_1 = data_model_1_1;
             },
             function (service_1_1) {
                 service_1 = service_1_1;
@@ -40,11 +43,7 @@ System.register(["@angular/core", "../service/service"], function (exports_1, co
                 };
                 CarHireEvent.prototype.addEuip = function (equiInit, equipNum) {
                     var _this = this;
-                    var model = {
-                        id: 1,
-                        equipInitial: equiInit,
-                        equipNum: equipNum,
-                    };
+                    var model = new data_model_1.DataModel(null, equiInit, equipNum);
                     console.log("init>>" + model.equipInitial + " num >>" + model.equipNum);
                     if (!equiInit) {
                         return;
@@ -53,7 +52,7 @@ System.register(["@angular/core", "../service/service"], function (exports_1, co
                         return;
                     }
                     this.service.addEquip(model)
-                        .subscribe(function (modelIncoming) { return _this.tabledata.push(modelIncoming); }, function (error) { return _this.errorMessage = error; });
+                        .subscribe(function (modelIncoming) { _this.fecthData(model.equiInit, model.equipNum); }, function (error) { return _this.errorMessage = error; });
                 };
                 return CarHireEvent;
             }());
@@ -61,7 +60,7 @@ System.register(["@angular/core", "../service/service"], function (exports_1, co
                 core_1.Component({
                     moduleId: __moduleName,
                     templateUrl: './CarHireEvent.html',
-                    styleUrls: ['../css/app.component.scss'],
+                    //styleUrls: ['../css/app.component.scss'],
                     styles: ['.error {color:red;}'],
                     providers: [service_1.Service],
                 }),

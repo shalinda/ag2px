@@ -9,7 +9,7 @@
     <input id="equipNum"   #equipNum     placeholder="Number" class="text-input" type="text">
 
     <input  class="form-field--inline btn btn--primary" (click)="fecthData(equipInitial.value,equipNum.value)"  type='button' value="Search">
-    <input   class="form-field--inline btn btn--primary"  (click)="addEuip(equipInitial.value,equipNum.value); newHeroName.value=''"  type='button' value="Add Equip">
+    <input   class="form-field--inline btn btn--primary"  (click)="addEuip(equipInitial.value,equipNum.value) "  type='button' value="Add Equip">
     <p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
 
 </px-card>

@@ -5,7 +5,7 @@ declare var __moduleName: string;
     moduleId: __moduleName,
     selector: 'my-app',
     templateUrl: './app.component.html',
-    styleUrls: ['../../styles.scss']
+
 })
 export class AppComponent {
 

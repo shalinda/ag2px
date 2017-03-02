@@ -43,7 +43,7 @@ export class CarHireEvent {
 
         this.service.addEquip(model)
             .subscribe(
-            modelIncoming => {this.fecthData(model.equiInit,model.equipNum)},
+            modelIncoming => {this.fecthData(model.equipInitial,model.equipNum)},
             error => this.errorMessage = <any> error);
     }
 

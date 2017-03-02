@@ -25,7 +25,6 @@ System.register(["@angular/core"], function (exports_1, context_1) {
                     moduleId: __moduleName,
                     selector: 'my-app',
                     templateUrl: './app.component.html',
-                    styleUrls: ['../../styles.scss']
                 })
             ], AppComponent);
             exports_1("AppComponent", AppComponent);

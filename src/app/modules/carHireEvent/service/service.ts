@@ -12,13 +12,14 @@ import {DataModel} from '../model/data-model';
 @Injectable()
 export class Service {
     //private url = 'equipments.json';  // URL to web API
-    private url = 'http://localhost:7000/cars';  // URL to web API
+    private url = 'api/carhireEvents';  // URL to web API
+    //    private url = 'http://localhost:7000/cars';  // URL to web API
 
     constructor(private http: Http) {}
 
     fecthData(model: DataModel): Observable<DataModel[]> {
         console.info("hero>>" + model.equipInitial);
-        return this.http.get(this.url + "/list")
+        return this.http.get(this.url)
             .map(this.extractData)
             .catch(this.handleError);
     }
@@ -34,7 +35,7 @@ export class Service {
 
     private extractData(res: Response) {
         let body = res.json();
-        return body || {};
+        return body._embedded.carhireEvents || {};
     }
 
     private handleError(error: Response | any) {

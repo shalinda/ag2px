@@ -52,7 +52,7 @@ System.register(["@angular/core", "../model/data-model", "../service/service"], 
                         return;
                     }
                     this.service.addEquip(model)
-                        .subscribe(function (modelIncoming) { _this.fecthData(model.equiInit, model.equipNum); }, function (error) { return _this.errorMessage = error; });
+                        .subscribe(function (modelIncoming) { _this.fecthData(model.equipInitial, model.equipNum); }, function (error) { return _this.errorMessage = error; });
                 };
                 return CarHireEvent;
             }());

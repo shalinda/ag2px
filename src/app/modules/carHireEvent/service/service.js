@@ -30,14 +30,15 @@ System.register(["@angular/core", "@angular/http", "rxjs/Observable", "rxjs/add/
         ],
         execute: function () {
             Service = (function () {
+                //    private url = 'http://localhost:7000/cars';  // URL to web API
                 function Service(http) {
                     this.http = http;
                     //private url = 'equipments.json';  // URL to web API
-                    this.url = 'http://localhost:7000/cars'; // URL to web API
+                    this.url = 'api/carhireEvents'; // URL to web API
                 }
                 Service.prototype.fecthData = function (model) {
                     console.info("hero>>" + model.equipInitial);
-                    return this.http.get(this.url + "/list")
+                    return this.http.get(this.url)
                         .map(this.extractData)
                         .catch(this.handleError);
                 };
@@ -51,7 +52,7 @@ System.register(["@angular/core", "@angular/http", "rxjs/Observable", "rxjs/add/
                 };
                 Service.prototype.extractData = function (res) {
                     var body = res.json();
-                    return body || {};
+                    return body._embedded.carhireEvents || {};
                 };
                 Service.prototype.handleError = function (error) {
                     // In a real world app, we might use a remote logging infrastructure

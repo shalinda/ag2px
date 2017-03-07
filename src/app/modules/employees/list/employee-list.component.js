@@ -61,4 +61,3 @@ System.register(["@angular/core", "@angular/router", "../service/employee.servic
         }
     };
 });
-//# sourceMappingURL=employee-list.component.js.map

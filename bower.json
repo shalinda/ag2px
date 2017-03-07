@@ -63,7 +63,9 @@
     "paper-datatable": "^0.9.8",
     "paper-datatable-api": "^0.2.9",
     "exm-datatable": "^0.9.11",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "px-spacing-design": "^0.4.4",
+    "px-datetime-picker": "^0.3.12"
   },
   "devDependencies": {
     "web-component-tester": "*",

@@ -20,4 +20,3 @@ System.register([], function (exports_1, context_1) {
         }
     };
 });
-//# sourceMappingURL=app-navigator-items.js.map

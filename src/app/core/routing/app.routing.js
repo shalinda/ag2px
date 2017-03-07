@@ -46,4 +46,3 @@ System.register(["@angular/router", "../../modules/carHireEvent/view/CarHireEven
         }
     };
 });
-//# sourceMappingURL=app.routing.js.map

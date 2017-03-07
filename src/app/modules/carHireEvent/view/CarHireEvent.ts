@@ -22,28 +22,24 @@ export class CarHireEvent {
 
     constructor(private service: Service) {}
 
-    fecthData(equiInit: string, equipNum: string) {
-        let model: DataModel;
-        model = {
-            id: 1,
-            equipInitial: equiInit,
-            equipNum: equipNum,
-        }
+    fecthData(equiInit: string, equipNum: string, eventType: string) {
+        console.log("equiInit >>" + equiInit + "equipNum >>" + equipNum + "eventType >>" + eventType);
+
+        let model = new DataModel(null, equiInit, equipNum, null, eventType);
         this.service.fecthData(model)
             .subscribe(
             list => this.tabledata = list,
             error => this.errorMessage = <any> error);
     }
 
-    addEuip(equiInit: string, equipNum: string) {
-        let model = new DataModel(null, equiInit, equipNum);
+    addEuip(equiInit: string, equipNum: string, eventType: string) {
+        let model = new DataModel(null, equiInit, equipNum, null, eventType);
         console.log("init>>" + model.equipInitial + " num >>" + model.equipNum);
-        if (!equiInit) {return;}
-        if (!equipNum) {return;}
+
 
         this.service.addEquip(model)
             .subscribe(
-            modelIncoming => {this.fecthData(model.equipInitial,model.equipNum)},
+            modelIncoming => {this.fecthData(model.equipInitial, model.equipNum, model.eventType)},
             error => this.errorMessage = <any> error);
     }
 

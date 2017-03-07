@@ -3,7 +3,9 @@
     {
       "id": 1,
       "equipInitial": "AM",
-      "equipNum": "123456"
+      "equipNum": "123456",
+      "eventDateTime": "2017-03-06T16:03:25.000Z",
+      "eventType": "ICR"
     },
     {
       "id": 2,
@@ -27,253 +29,33 @@
     },
     {
       "id": 6,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
+      "equipInitial": "sdfs",
+      "equipNum": "sdfsd"
     },
     {
       "id": 7,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
+      "equipInitial": "ss",
+      "equipNum": "sss"
     },
     {
-      "id": 8,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
+      "model": {
+        "id": null,
+        "equipInitial": "",
+        "equipNum": "",
+        "eventDateTime": null,
+        "eventType": "ICR"
+      },
+      "id": 8
     },
     {
-      "id": 9,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 10,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 11,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 12,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 13,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 14,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 15,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 16,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 17,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 18,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 19,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 20,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 21,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 22,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 23,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 24,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 25,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 26,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 27,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 28,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 29,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 30,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 31,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 32,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 33,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 34,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 35,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 36,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 37,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 38,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 39,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 40,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 41,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 42,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
-    },
-    {
-      "id": 43,
-      "equipInitial": "sdfs",
-      "equipNum": "erwre"
-    },
-    {
-      "id": 44,
-      "equipInitial": "sdfs",
-      "equipNum": "erwre"
-    },
-    {
-      "id": 45,
-      "equipInitial": "sdfs",
-      "equipNum": "erwre"
-    },
-    {
-      "id": 46,
-      "equipInitial": "sdfs",
-      "equipNum": "erwre"
-    },
-    {
-      "id": 47,
-      "equipInitial": "sdfs",
-      "equipNum": "erwre"
-    },
-    {
-      "id": 48,
-      "equipInitial": "sdfs",
-      "equipNum": "erwre"
-    },
-    {
-      "id": 49,
-      "equipInitial": "sdfs",
-      "equipNum": "erwre"
-    },
-    {
-      "id": 50,
-      "equipInitial": "sdfs",
-      "equipNum": "erwre"
-    },
-    {
-      "id": 51,
-      "equipInitial": "sdfs",
-      "equipNum": "erwre"
-    },
-    {
-      "id": 52,
-      "equipInitial": "sdfs",
-      "equipNum": "erwre"
-    },
-    {
-      "id": 53,
-      "equipInitial": "wfw",
-      "equipNum": "wefewf"
-    },
-    {
-      "id": 54,
-      "equipInitial": "wfw",
-      "equipNum": "wefewf"
-    },
-    {
-      "id": 55,
-      "equipInitial": "wfw",
-      "equipNum": "wefewf"
+      "model": {
+        "id": null,
+        "equipInitial": "",
+        "equipNum": "",
+        "eventDateTime": null,
+        "eventType": "ICR"
+      },
+      "id": 9
     }
   ]
 }

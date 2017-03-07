@@ -30,29 +30,19 @@ System.register(["@angular/core", "../model/data-model", "../service/service"], 
                     this.tabledata = [];
                     this.mode = 'Observable';
                 }
-                CarHireEvent.prototype.fecthData = function (equiInit, equipNum) {
+                CarHireEvent.prototype.fecthData = function (equiInit, equipNum, eventType) {
                     var _this = this;
-                    var model;
-                    model = {
-                        id: 1,
-                        equipInitial: equiInit,
-                        equipNum: equipNum,
-                    };
+                    console.log("equiInit >>" + equiInit + "equipNum >>" + equipNum + "eventType >>" + eventType);
+                    var model = new data_model_1.DataModel(null, equiInit, equipNum, null, eventType);
                     this.service.fecthData(model)
                         .subscribe(function (list) { return _this.tabledata = list; }, function (error) { return _this.errorMessage = error; });
                 };
-                CarHireEvent.prototype.addEuip = function (equiInit, equipNum) {
+                CarHireEvent.prototype.addEuip = function (equiInit, equipNum, eventType) {
                     var _this = this;
-                    var model = new data_model_1.DataModel(null, equiInit, equipNum);
+                    var model = new data_model_1.DataModel(null, equiInit, equipNum, null, eventType);
                     console.log("init>>" + model.equipInitial + " num >>" + model.equipNum);
-                    if (!equiInit) {
-                        return;
-                    }
-                    if (!equipNum) {
-                        return;
-                    }
                     this.service.addEquip(model)
-                        .subscribe(function (modelIncoming) { _this.fecthData(model.equipInitial, model.equipNum); }, function (error) { return _this.errorMessage = error; });
+                        .subscribe(function (modelIncoming) { _this.fecthData(model.equipInitial, model.equipNum, model.eventType); }, function (error) { return _this.errorMessage = error; });
                 };
                 return CarHireEvent;
             }());
@@ -70,4 +60,3 @@ System.register(["@angular/core", "../model/data-model", "../service/service"], 
         }
     };
 });
-//# sourceMappingURL=CarHireEvent.js.map

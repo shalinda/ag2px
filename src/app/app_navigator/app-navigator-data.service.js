@@ -26,4 +26,3 @@ System.register(["./app-navigator-items"], function (exports_1, context_1) {
         }
     };
 });
-//# sourceMappingURL=app-navigator-data.service.js.map

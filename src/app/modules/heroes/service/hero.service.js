@@ -48,4 +48,3 @@ System.register(["./hero-mock.data"], function (exports_1, context_1) {
         }
     };
 });
-//# sourceMappingURL=hero.service.js.map

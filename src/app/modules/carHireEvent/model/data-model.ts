@@ -1,9 +1,11 @@
 export class DataModel {
-  constructor(
-    public id: number,
-    public equipInitial: string,
-    public equipNum: string
-    ) { }
+    constructor(
+        public id: number,
+        public equipInitial: string,
+        public equipNum: string,
+        public eventDateTime: Date,
+        public eventType: string
+    ) {}
 }
 
 

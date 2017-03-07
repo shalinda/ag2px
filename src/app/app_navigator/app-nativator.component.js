@@ -47,4 +47,3 @@ System.register(["@angular/core", "./app-navigator-data.service"], function (exp
         }
     };
 });
-//# sourceMappingURL=app-nativator.component.js.map

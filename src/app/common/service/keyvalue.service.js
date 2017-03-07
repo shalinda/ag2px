@@ -51,4 +51,3 @@ System.register(["@angular/core", "@angular/http", "rxjs/add/operator/toPromise"
         }
     };
 });
-//# sourceMappingURL=keyvalue.service.js.map

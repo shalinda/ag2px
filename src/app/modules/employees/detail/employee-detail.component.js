@@ -108,4 +108,3 @@ System.register(["@angular/core", "@angular/router", "@angular/common", "rxjs/ad
         }
     };
 });
-//# sourceMappingURL=employee-detail.component.js.map

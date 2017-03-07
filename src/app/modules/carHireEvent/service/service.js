@@ -30,11 +30,13 @@ System.register(["@angular/core", "@angular/http", "rxjs/Observable", "rxjs/add/
         ],
         execute: function () {
             Service = (function () {
-                //    private url = 'http://localhost:7000/cars';  // URL to web API
                 function Service(http) {
                     this.http = http;
                     //private url = 'equipments.json';  // URL to web API
-                    this.url = 'api/carhireEvents'; // URL to web API
+                    //    private url = 'http://localhost:9090/api/getUser';  // URL to web API
+                    //    private url = 'http://localhost:9090/api/carhireEvents';  // URL to web API
+                    //    private url = 'http://localhost:9090/api/fetch';  // URL to web API
+                    this.url = 'http://localhost:7000/cars'; // URL to web API
                 }
                 Service.prototype.fecthData = function (model) {
                     console.info("hero>>" + model.equipInitial);
@@ -46,13 +48,14 @@ System.register(["@angular/core", "@angular/http", "rxjs/Observable", "rxjs/add/
                     console.info("model >>" + model.equipInitial);
                     var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
                     var options = new http_2.RequestOptions({ headers: headers });
-                    return this.http.post(this.url, model, options)
+                    return this.http.post(this.url, { model: model })
                         .map(this.extractData)
                         .catch(this.handleError);
                 };
                 Service.prototype.extractData = function (res) {
                     var body = res.json();
-                    return body._embedded.carhireEvents || {};
+                    return body || {};
+                    //        return body._embedded.carhireEvents || {};
                 };
                 Service.prototype.handleError = function (error) {
                     // In a real world app, we might use a remote logging infrastructure
@@ -79,4 +82,3 @@ System.register(["@angular/core", "@angular/http", "rxjs/Observable", "rxjs/add/
         }
     };
 });
-//# sourceMappingURL=service.js.map

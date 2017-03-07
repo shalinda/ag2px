@@ -61,4 +61,3 @@ System.register(["@angular/core", "@angular/router", "../service/hero.service"],
         }
     };
 });
-//# sourceMappingURL=hero-list.component.js.map

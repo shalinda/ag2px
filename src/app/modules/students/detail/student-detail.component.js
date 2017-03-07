@@ -141,4 +141,3 @@ System.register(["@angular/core", "@angular/router", "@angular/common", "@angula
         }
     };
 });
-//# sourceMappingURL=student-detail.component.js.map

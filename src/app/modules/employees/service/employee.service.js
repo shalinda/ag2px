@@ -91,4 +91,3 @@ System.register(["@angular/core", "@angular/http", "rxjs/add/operator/toPromise"
         }
     };
 });
-//# sourceMappingURL=employee.service.js.map

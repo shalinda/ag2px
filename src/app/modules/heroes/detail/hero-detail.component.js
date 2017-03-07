@@ -151,4 +151,3 @@ System.register(["@angular/core", "@angular/router", "@angular/common", "@angula
         }
     };
 });
-//# sourceMappingURL=hero-detail.component.js.map

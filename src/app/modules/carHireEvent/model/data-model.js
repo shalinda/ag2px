@@ -6,10 +6,12 @@ System.register([], function (exports_1, context_1) {
         setters: [],
         execute: function () {
             DataModel = (function () {
-                function DataModel(id, equipInitial, equipNum) {
+                function DataModel(id, equipInitial, equipNum, eventDateTime, eventType) {
                     this.id = id;
                     this.equipInitial = equipInitial;
                     this.equipNum = equipNum;
+                    this.eventDateTime = eventDateTime;
+                    this.eventType = eventType;
                 }
                 return DataModel;
             }());
@@ -22,4 +24,3 @@ System.register([], function (exports_1, context_1) {
         }
     };
 });
-//# sourceMappingURL=data-model.js.map

@@ -47,4 +47,3 @@ System.register(["../service/student-mock.data"], function (exports_1, context_1
         }
     };
 });
-//# sourceMappingURL=student.service.js.map

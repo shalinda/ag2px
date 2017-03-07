@@ -15,7 +15,7 @@ export class Service {
     //    private url = 'http://localhost:9090/api/getUser';  // URL to web API
     //    private url = 'http://localhost:9090/api/carhireEvents';  // URL to web API
     //    private url = 'http://localhost:9090/api/fetch';  // URL to web API
-    private url = 'http://localhost:7000/cars';  // URL to web API
+    private url = 'http://localhost:9090/api/carhireEvents';  // URL to web API
 
     constructor(private http: Http) {}
 
@@ -30,15 +30,15 @@ export class Service {
         console.info("model >>" + model.equipInitial);
         let headers = new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({headers: headers});
-        return this.http.post(this.url, {model})
+        return this.http.post(this.url, model)
             .map(this.extractData)
             .catch(this.handleError);
     }
 
     private extractData(res: Response) {
         let body = res.json();
-        return body || {};
-        //        return body._embedded.carhireEvents || {};
+        //        return body || {};
+        return body._embedded.carhireEvents || {};
     }
 
     private handleError(error: Response | any) {

@@ -31,7 +31,6 @@ System.register(["@angular/core", "@angular/forms", "../../model/data-model", ".
                 function EventEdit(fb, service) {
                     this.fb = fb;
                     this.service = service;
-                    this.data2 = [];
                     this.mode = 'Observable';
                     this.heroForm = this.fb.group({
                         equipNum: [null, forms_1.Validators.required],

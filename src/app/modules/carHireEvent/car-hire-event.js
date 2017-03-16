@@ -35,7 +35,7 @@ System.register(["@angular/core", "@angular/forms", "./model/data-model", "./ser
                     this.fb = fb;
                     this.service = service;
                     this.tabledata = [];
-                    this.data2 = new data_model_1.DataModel();
+                    this.data2 = new data_model_1.DataModel(null, null, null, null, null);
                     this.heroForm = this.fb.group({
                         equipNum: ['', forms_1.Validators.required],
                         equipInitial: ['', forms_1.Validators.required],
@@ -47,12 +47,13 @@ System.register(["@angular/core", "@angular/forms", "./model/data-model", "./ser
                     console.log(this.tabledata);
                 };
                 CarHireEvent.prototype.ngAfterViewInit = function () {
-                    Polymer.dom(document).querySelector("#mytable").addEventListener("px-cell-click", function (e) {
-                        Polymer.dom(document).querySelector("#three").modalButtonClicked();
-                        this.data2 = new data_model_1.DataModel(1, 'xx', 'xxxx', null, 'OLL');
-                        var clickedRow = e.detail.row;
-                        console.log("Row clicked", clickedRow, " _selected: ", clickedRow._selected);
-                    });
+                    //        Polymer.dom(document).querySelector("#mytable").addEventListener("px-cell-click", function (e) {
+                    //            Polymer.dom(document).querySelector("#three").modalButtonClicked();
+                    //            this.data2 = new DataModel(1, 'xx', 'xxxx', null, 'OLL');
+                    //            var clickedRow = e.detail.row;
+                    //            console.log("Row clicked", clickedRow, " _selected: ", clickedRow._selected);
+                    //
+                    //        });
                 };
                 return CarHireEvent;
             }());

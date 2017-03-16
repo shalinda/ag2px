@@ -13,7 +13,7 @@ import {Observable} from 'rxjs/Observable';
 })
 export class EventEdit implements AfterViewInit, OnChanges {
     heroForm: FormGroup;
-    @Input() data2: DataModel = [];
+    @Input() data2: DataModel;
     errorMessage: string;
     mode = 'Observable';
 

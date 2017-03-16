@@ -15,7 +15,7 @@ export class CarHireEvent implements AfterViewInit {
     heroForm: FormGroup;
     tabledata: DataModel[] = [];
     errorMessage: string;
-    data2: DataModel = new DataModel();
+    data2: DataModel = new DataModel(null, null, null, null, null);
 
 
     onTableDataRecvd(dataSet: DataModel[]) {
@@ -35,13 +35,13 @@ export class CarHireEvent implements AfterViewInit {
     }
 
     ngAfterViewInit() {
-        Polymer.dom(document).querySelector("#mytable").addEventListener("px-cell-click", function (e) {
-            Polymer.dom(document).querySelector("#three").modalButtonClicked();
-            this.data2 = new DataModel(1, 'xx', 'xxxx', null, 'OLL');
-            var clickedRow = e.detail.row;
-            console.log("Row clicked", clickedRow, " _selected: ", clickedRow._selected);
-
-        });
+        //        Polymer.dom(document).querySelector("#mytable").addEventListener("px-cell-click", function (e) {
+        //            Polymer.dom(document).querySelector("#three").modalButtonClicked();
+        //            this.data2 = new DataModel(1, 'xx', 'xxxx', null, 'OLL');
+        //            var clickedRow = e.detail.row;
+        //            console.log("Row clicked", clickedRow, " _selected: ", clickedRow._selected);
+        //
+        //        });
 
     }
 

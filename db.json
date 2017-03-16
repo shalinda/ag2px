@@ -14,48 +14,66 @@
     },
     {
       "id": 3,
-      "equipInitial": "dqwed",
-      "equipNum": "222"
+      "equipInitial": null,
+      "equipNum": null,
+      "eventDateTime": null,
+      "eventType": null
     },
     {
       "id": 4,
-      "equipInitial": "s",
-      "equipNum": "123"
+      "equipInitial": null,
+      "equipNum": null,
+      "eventDateTime": null,
+      "eventType": null
     },
     {
       "id": 5,
-      "equipInitial": "fsdf",
-      "equipNum": "sdfsdf"
+      "equipInitial": null,
+      "equipNum": null,
+      "eventDateTime": null,
+      "eventType": null
     },
     {
       "id": 6,
-      "equipInitial": "sdfs",
-      "equipNum": "sdfsd"
+      "equipInitial": null,
+      "equipNum": null,
+      "eventDateTime": null,
+      "eventType": null
     },
     {
       "id": 7,
-      "equipInitial": "ss",
-      "equipNum": "sss"
+      "equipInitial": null,
+      "equipNum": null,
+      "eventDateTime": null,
+      "eventType": null
     },
     {
-      "model": {
-        "id": null,
-        "equipInitial": "",
-        "equipNum": "",
-        "eventDateTime": null,
-        "eventType": "ICR"
-      },
-      "id": 8
+      "id": 8,
+      "equipInitial": null,
+      "equipNum": null,
+      "eventDateTime": null,
+      "eventType": null
     },
     {
-      "model": {
-        "id": null,
-        "equipInitial": "",
-        "equipNum": "",
-        "eventDateTime": null,
-        "eventType": "ICR"
-      },
-      "id": 9
+      "id": 9,
+      "equipInitial": null,
+      "equipNum": null,
+      "eventDateTime": null,
+      "eventType": null
+    },
+    {
+      "id": 10,
+      "equipInitial": null,
+      "equipNum": null,
+      "eventDateTime": null,
+      "eventType": null
+    },
+    {
+      "id": 11,
+      "equipInitial": null,
+      "equipNum": null,
+      "eventDateTime": null,
+      "eventType": null
     }
   ]
 }

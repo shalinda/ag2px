@@ -1,1 +1,0 @@
-{"version":3,"file":"app-navigator-items.js","sourceRoot":"","sources":["app-navigator-items.ts"],"names":[],"mappings":";;;;;;;YAAA,6BAAa,eAAe,GAAG;gBAC3B,EAAE,MAAM,EAAE,UAAU;oBAClB,MAAM,EAAE,yBAAyB;oBACjC,WAAW,EAAE,WAAW;oBACxB,OAAO,EAAE,UAAU;iBACpB;gBACD;oBACE,MAAM,EAAE,QAAQ;oBAChB,MAAM,EAAE,cAAc;oBACtB,OAAO,EAAE,QAAQ;iBAClB;aACJ,EAAC;QAAA,CAAC"}

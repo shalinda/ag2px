@@ -1,48 +1,49 @@
-// Observable Version
 import {Injectable} from '@angular/core';
 import {Http, Response} from '@angular/http';
 import {Headers, RequestOptions} from '@angular/http';
-
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/share';
 import {DataModel} from '../model/data-model';
 
 
 @Injectable()
 export class Service {
-    //private url = 'equipments.json';  // URL to web API
-    //    private url = 'http://localhost:9090/api/getUser';  // URL to web API
-    //    private url = 'http://localhost:9090/api/carhireEvents';  // URL to web API
-    //    private url = 'http://localhost:9090/api/fetch';  // URL to web API
-    private url = 'http://localhost:9090/api/carhireEvents';  // URL to web API
+    //private url = 'http://localhost:9090/api/carhireEvents';
+
+    private url = 'http://localhost:7000/cars';
 
     constructor(private http: Http) {}
 
     fecthData(model: DataModel): Observable<DataModel[]> {
-        console.info("hero>>" + model.equipInitial);
-        return this.http.get(this.url)
+        console.info("model>>" + JSON.stringify([model]));
+        let headers = new Headers({'Content-Type': 'application/json'});
+        let options = new RequestOptions({headers: headers});
+
+        return this.http.get(this.url, options)
             .map(this.extractData)
+            .share()
             .catch(this.handleError);
     }
 
     addEquip(model: DataModel): Observable<DataModel> {
-        console.info("model >>" + model.equipInitial);
+        //        console.info("model>>" + JSON.stringify([model.equipInitial]));
         let headers = new Headers({'Content-Type': 'application/json'});
         let options = new RequestOptions({headers: headers});
         return this.http.post(this.url, model)
+            .share()
             .map(this.extractData)
-            .catch(this.handleError);
+            ;
     }
 
     private extractData(res: Response) {
         let body = res.json();
-        //        return body || {};
-        return body._embedded.carhireEvents || {};
+        return body || {};
+        //return body._embedded.carhireEvents || {};
     }
 
     private handleError(error: Response | any) {
-        // In a real world app, we might use a remote logging infrastructure
         let errMsg: string;
         if (error instanceof Response) {
             console.error("Error in response");

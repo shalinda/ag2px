@@ -1,0 +1,26 @@
+
+<px-card header-text="Edit Form"     style="height:150px" >
+    <form [formGroup]="heroForm" novalidate (ngSubmit)="submitForm(heroForm.value)">
+
+        <label   class="u--m++  label--inline"   >Equip Initial</label>
+        <input id="equipInitial"     placeholder="Initial" class="text-input input--tiny" type="text">
+
+
+        <label for="equipNum"  class="u--m++ label--inline">Equip Number</label>
+        <input id="equipNum"        placeholder="Number" class="text-input input--tiny" type="text">
+
+        <label   class="u--m++  label--inline">Event Type</label>
+        <select  class="u-ml " >
+            <option >First</option>
+            <option >Second</option>
+            <option >Third</option>
+        </select>
+
+        <!--<label    class="u--m++  label--inline">Event Date Time</label>-->
+        <!--<px-datetime-picker class="u-ml form-field--inline " date-format="YYYY/MM/DD" how-time-zone="none" time-format="HH:mm:ss" time-zone="UTC" date-time="2016-02-11T05:30:00.000Z"></px-datetime-picker>-->
+        <input class="u-ml form-field--inline btn     "  (click)="addEuip()"  type='button' value="Add">
+    </form>
+
+
+    {{data2 | json}}
+</px-card>

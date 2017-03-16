@@ -1,4 +1,4 @@
-System.register(["@angular/core", "@angular/http", "rxjs/Observable", "rxjs/add/operator/catch", "rxjs/add/operator/map"], function (exports_1, context_1) {
+System.register(["@angular/core", "@angular/http", "rxjs/Observable", "rxjs/add/operator/catch", "rxjs/add/operator/map", "rxjs/add/operator/share"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -26,39 +26,40 @@ System.register(["@angular/core", "@angular/http", "rxjs/Observable", "rxjs/add/
             function (_1) {
             },
             function (_2) {
+            },
+            function (_3) {
             }
         ],
         execute: function () {
             Service = (function () {
                 function Service(http) {
                     this.http = http;
-                    //private url = 'equipments.json';  // URL to web API
-                    //    private url = 'http://localhost:9090/api/getUser';  // URL to web API
-                    //    private url = 'http://localhost:9090/api/carhireEvents';  // URL to web API
-                    //    private url = 'http://localhost:9090/api/fetch';  // URL to web API
-                    this.url = 'http://localhost:7000/cars'; // URL to web API
+                    //private url = 'http://localhost:9090/api/carhireEvents';
+                    this.url = 'http://localhost:7000/cars';
                 }
                 Service.prototype.fecthData = function (model) {
-                    console.info("hero>>" + model.equipInitial);
-                    return this.http.get(this.url)
+                    console.info("model>>" + JSON.stringify([model]));
+                    var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
+                    var options = new http_2.RequestOptions({ headers: headers });
+                    return this.http.get(this.url, options)
                         .map(this.extractData)
+                        .share()
                         .catch(this.handleError);
                 };
                 Service.prototype.addEquip = function (model) {
-                    console.info("model >>" + model.equipInitial);
+                    //        console.info("model>>" + JSON.stringify([model.equipInitial]));
                     var headers = new http_2.Headers({ 'Content-Type': 'application/json' });
                     var options = new http_2.RequestOptions({ headers: headers });
-                    return this.http.post(this.url, { model: model })
-                        .map(this.extractData)
-                        .catch(this.handleError);
+                    return this.http.post(this.url, model)
+                        .share()
+                        .map(this.extractData);
                 };
                 Service.prototype.extractData = function (res) {
                     var body = res.json();
                     return body || {};
-                    //        return body._embedded.carhireEvents || {};
+                    //return body._embedded.carhireEvents || {};
                 };
                 Service.prototype.handleError = function (error) {
-                    // In a real world app, we might use a remote logging infrastructure
                     var errMsg;
                     if (error instanceof http_1.Response) {
                         console.error("Error in response");

@@ -48,6 +48,7 @@
         <link rel="import" href="bower_components/px-spinner/px-spinner.html" />
         <link rel="import" href="bower_components/px-app-nav/px-app-nav.html" />
         <link rel="import" href="/bower_components/px-datetime-picker/px-datetime-picker.html"/>
+        <link rel="import" href="/bower_components/px-modal/px-modal.html"/>
 
         <link rel="import" href="bower_components/px-theme/px-theme-styles.html">
         <style include="px-theme-styles" is="custom-style"></style>
@@ -76,6 +77,14 @@
             </div>
         </div>
     </my-app>
+
+
+    <script>
+        function inputLostFocus(evt) {
+            Polymer.dom(document).querySelector("#three").modalButtonClicked();
+        }
+    </script>
+
 </body>
 </html>
 

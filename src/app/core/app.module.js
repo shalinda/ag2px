@@ -1,4 +1,4 @@
-System.register(["@angular/core", "@angular/common", "@angular/platform-browser", "@angular/forms", "@angular/http", "./app.component", "./routing/app.routing", "../app_navigator/app-nativator.component", "../modules/students/list/student-list.component", "../modules/students/detail/student-detail.component", "../modules/heroes/list/hero-list.component", "../modules/heroes/detail/hero-detail.component", "../modules/employees/list/employee-list.component", "../modules/employees/detail/employee-detail.component", "../layout/header.component", "../layout/menu.component", "../layout/sidebar.component", "../layout/profile.component", "../app_navigator/app-navigator-data.service", "../modules/students/service/student.service", "../modules/heroes/service/hero.service", "../modules/employees/service/employee.service", "../modules/carHireEvent/view/CarHireEvent"], function (exports_1, context_1) {
+System.register(["@angular/core", "@angular/common", "@angular/platform-browser", "@angular/forms", "@angular/http", "./app.component", "./routing/app.routing", "../modules/carHireEvent/event.module"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -7,7 +7,7 @@ System.register(["@angular/core", "@angular/common", "@angular/platform-browser"
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
     var __moduleName = context_1 && context_1.id;
-    var core_1, common_1, platform_browser_1, forms_1, http_1, app_component_1, app_routing_1, app_nativator_component_1, student_list_component_1, student_detail_component_1, hero_list_component_1, hero_detail_component_1, employee_list_component_1, employee_detail_component_1, header_component_1, menu_component_1, sidebar_component_1, profile_component_1, app_navigator_data_service_1, student_service_1, hero_service_1, employee_service_1, powerList, genderList, empTypeList, common_2, CarHireEvent_1, AppModule;
+    var core_1, common_1, platform_browser_1, forms_1, http_1, app_component_1, common_2, app_routing_1, event_module_1, AppModule;
     return {
         setters: [
             function (core_1_1) {
@@ -32,59 +32,11 @@ System.register(["@angular/core", "@angular/common", "@angular/platform-browser"
             function (app_routing_1_1) {
                 app_routing_1 = app_routing_1_1;
             },
-            function (app_nativator_component_1_1) {
-                app_nativator_component_1 = app_nativator_component_1_1;
-            },
-            function (student_list_component_1_1) {
-                student_list_component_1 = student_list_component_1_1;
-            },
-            function (student_detail_component_1_1) {
-                student_detail_component_1 = student_detail_component_1_1;
-            },
-            function (hero_list_component_1_1) {
-                hero_list_component_1 = hero_list_component_1_1;
-            },
-            function (hero_detail_component_1_1) {
-                hero_detail_component_1 = hero_detail_component_1_1;
-            },
-            function (employee_list_component_1_1) {
-                employee_list_component_1 = employee_list_component_1_1;
-            },
-            function (employee_detail_component_1_1) {
-                employee_detail_component_1 = employee_detail_component_1_1;
-            },
-            function (header_component_1_1) {
-                header_component_1 = header_component_1_1;
-            },
-            function (menu_component_1_1) {
-                menu_component_1 = menu_component_1_1;
-            },
-            function (sidebar_component_1_1) {
-                sidebar_component_1 = sidebar_component_1_1;
-            },
-            function (profile_component_1_1) {
-                profile_component_1 = profile_component_1_1;
-            },
-            function (app_navigator_data_service_1_1) {
-                app_navigator_data_service_1 = app_navigator_data_service_1_1;
-            },
-            function (student_service_1_1) {
-                student_service_1 = student_service_1_1;
-            },
-            function (hero_service_1_1) {
-                hero_service_1 = hero_service_1_1;
-            },
-            function (employee_service_1_1) {
-                employee_service_1 = employee_service_1_1;
-            },
-            function (CarHireEvent_1_1) {
-                CarHireEvent_1 = CarHireEvent_1_1;
+            function (event_module_1_1) {
+                event_module_1 = event_module_1_1;
             }
         ],
         execute: function () {
-            powerList = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
-            genderList = [{ 'key': 'M', 'value': 'Male' }, { 'key': 'F', 'value': 'Female' }];
-            empTypeList = [{ 'key': '1', 'value': 'HR' }, { 'key': '2', 'value': 'IT' }, { 'key': '3', 'value': 'Admin' }];
             AppModule = (function () {
                 function AppModule() {
                 }
@@ -99,32 +51,13 @@ System.register(["@angular/core", "@angular/common", "@angular/platform-browser"
                         http_1.HttpModule,
                         http_1.JsonpModule,
                         common_2.CommonModule,
+                        event_module_1.EventModule
                     ],
                     declarations: [
-                        app_component_1.AppComponent,
-                        app_nativator_component_1.AppNavigatorComponent,
-                        student_list_component_1.StudentListCoponent,
-                        student_detail_component_1.StudentDetailComponent,
-                        hero_list_component_1.HeroListComponent,
-                        hero_detail_component_1.HeroDetailComponent,
-                        employee_list_component_1.EmployeeListComponent,
-                        employee_detail_component_1.EmployeeDetailComponent,
-                        header_component_1.HeaderComponent,
-                        menu_component_1.MenuComponent,
-                        sidebar_component_1.SidebarComponent,
-                        profile_component_1.UserProfileComponent,
-                        CarHireEvent_1.CarHireEvent,
+                        app_component_1.AppComponent
                     ],
                     providers: [
-                        app_routing_1.appRoutingProviders,
                         { provide: common_1.LocationStrategy, useClass: common_1.HashLocationStrategy },
-                        app_navigator_data_service_1.AppNavigatorDataService,
-                        student_service_1.StudentService,
-                        employee_service_1.EmployeeService,
-                        hero_service_1.HeroService,
-                        { provide: 'powerListToken', useValue: powerList },
-                        { provide: 'genderList', useValue: genderList },
-                        { provide: 'empTypeList', useValue: empTypeList }
                     ],
                     bootstrap: [app_component_1.AppComponent],
                     schemas: [core_1.CUSTOM_ELEMENTS_SCHEMA]

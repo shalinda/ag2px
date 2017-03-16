@@ -1,4 +1,5 @@
 'use strict';
+        const del = require("del");
         const path = require('path');
         const gulp = require('gulp');
         const pkg = require('./package.json');
@@ -20,14 +21,17 @@
                         bower: true
                 }
         };
-        gulp.task('clean', function() {
-        return gulp.src(['.tmp', 'css'], {
-        read: false
-        }).pipe($.clean());
-        });
         function handleError(err){
         console.log(err.toString());
                 this.emit('end');
+        }
+function cleanOldCSS(){
+del(['.tmp', 'src/css', '*.css']);
+        console.log(' >> cleaned old css dirctory.. ');
+        }
+function cleanTempCSS(){
+del([ '*.css']);
+        console.log(' >> cleaned temp css dirctory.. ');
         }
 
 function buildCSS(){
@@ -38,58 +42,23 @@ return combiner.obj([
                 cascade: false
         }),
         gulpif(!argv.debug, $.cssmin())
-        ]).on('error', handleError);
-}
+]).on('error', handleError);
+        }
 
 
 gulp.task('demosass', function() {
-return gulp.src(['./src/sass/*.scss'])
+cleanOldCSS();
+        return gulp.src(['./src/sass/*.scss'])
         .pipe(buildCSS())
         .pipe(gulp.dest('src/css'))
+
         .pipe(browserSync.stream({match: '**/*.css'}));
-});
+        });
         gulp.task('watch', function() {
-        gulp.watch('src/sass/*.scss', ['clean', 'demosass']);
+        gulp.watch('src/sass/*.scss', ['demosass' ]);
         });
-        gulp.task('serve', function() {
-        browserSync.init({
-        port: 8080,
-                notify: false,
-                reloadOnRestart: true,
-                logPrefix: `${pkg.name}`,
-                https: false,
-                server: ['./', 'bower_components'],
+        gulp.task('watch2', function() {
+        gulp.watch('src/**/*.css', [  'test']);
         });
-                gulp.watch(['css/*-styles.html', 'css/*-demo.css', '*.html', '*.js']).on('change', browserSync.reload);
-                gulp.watch(['sass/*.scss', '!sass/*-demo.scss'], ['sass']);
-                gulp.watch('sass/*-demo.scss', ['demosass']);
-        });
-        gulp.task('bump:patch', function(){
-        gulp.src(['./bower.json', './package.json'])
-                .pipe(bump({type:'patch'}))
-                .pipe(gulp.dest('./'));
-        });
-        gulp.task('bump:minor', function(){
-        gulp.src(['./bower.json', './package.json'])
-                .pipe(bump({type:'minor'}))
-                .pipe(gulp.dest('./'));
-        });
-        gulp.task('bump:major', function(){
-        gulp.src(['./bower.json', './package.json'])
-                .pipe(bump({type:'major'}))
-                .pipe(gulp.dest('./'));
-        });
-        gulp.task('default', function(callback) {
-        gulpSequence('clean', 'demosass')(callback);
-        });
-        /**
-         * Special task just for Sass design repos. Builds the Sassdoc documentation and
-         * spits it out as `sassdoc.json`.
-         */
-        gulp.task('sassdoc', function(){
-          gulp.src(['./*.scss'])
-                    .pipe(sassdoc.parse())
-                    .on('data', function(data){
-                      fs.writeFileSync('sassdoc.json', JSON.stringify(data, null, 4));
-                    });
+        gulp.task('test', function() { console.log(' >> >>>> ');
         });

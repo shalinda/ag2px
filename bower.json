@@ -65,7 +65,8 @@
     "exm-datatable": "^0.9.11",
     "font-awesome": "^4.7.0",
     "px-spacing-design": "^0.4.4",
-    "px-datetime-picker": "^0.3.12"
+    "px-datetime-picker": "^0.3.12",
+    "px-modal": "https://github.com/PredixDev/px-modal.git#^1.4.8"
   },
   "devDependencies": {
     "web-component-tester": "*",

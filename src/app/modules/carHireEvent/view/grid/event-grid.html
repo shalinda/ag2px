@@ -1,0 +1,14 @@
+
+<px-card header-text="Events Screen "   class="body_box_wrapper"  >
+
+    <div>
+        <px-data-table id='mytable'  [tableData]="tabledata" striped="true" filterable  px-cell-click=" console.log('Row clicked' )"   click=" console.log('Row clicked' )">
+            <px-data-table-column   name="id" label='ID' filterable  sortable editable  >  </px-data-table-column>
+            <px-data-table-column  name="equipInitial"  label='Equip Initial' filterable  sortable editable  >  </px-data-table-column>
+            <px-data-table-column  name="equipNum"  label='Equip Number' filterable  sortable editable  >  </px-data-table-column>
+            <px-data-table-column  name="eventDateTime"  label='Time' filterable  sortable editable  >  </px-data-table-column>
+            <px-data-table-column  name="eventType"  label='Event Type' filterable  sortable editable  >  </px-data-table-column>
+        </px-data-table>
+    </div>
+</px-card>
+

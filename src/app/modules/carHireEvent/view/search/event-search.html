@@ -1,0 +1,30 @@
+<px-card header-text="Search Form"     style="height:150px" >
+    <form [formGroup]="heroForm" novalidate (ngSubmit)="submitForm(heroForm.value)">
+
+
+        <label for="name" class="u--m++  label--inline"   >Equip Initial</label>
+        <input id="equipInitial" formControlName="equipInitial"     class="text-input input--tiny"   placeholder="Initial"  type="text">
+
+
+        <label for="equipNum"  class="u--m++ label--inline">Equip Number</label>
+        <input id="equipNum"   formControlName="equipNum"     placeholder="Number" class="text-input input--tiny" type="text">
+
+        <label    class="u--m++  label--inline">Event Type</label>
+        <select  class="u-ml "  formControlName="eventType"   >
+            <option >ICR</option>
+            <option >ICH</option>
+            <option >RLO</option>
+            <option >RMT</option>
+        </select>
+
+
+        <input class="u-ml form-field--inline btn btn--primary   "  (click)="fecthData( )"  type='button' value="Search">
+        <!--<input class="u-ml form-field--inline btn     "  (click)="addEuip( )"  type='button' value="Add">-->
+
+        <p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
+
+    </form>
+
+</px-card>
+
+
